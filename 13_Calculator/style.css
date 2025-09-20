@@ -1,0 +1,101 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #fff url('image/shapes\ image.png') no-repeat fixed center;
+    background-size: cover;
+}
+
+.calculator {
+    width: 430px;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid white;
+    padding: 20px 0 30px 0;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+
+    & .input {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        & input {
+            width: 90%;
+            height: 80px;
+            text-align: right;
+            font-size: 70px;
+            background-color: transparent;
+            border: hidden;
+            color: rgb(197, 80, 119);
+            outline: none;
+
+            &::placeholder {
+                color: rgb(197, 80, 119);
+            }
+        }
+    }
+
+
+    .button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 50px 20px 0 20px;
+        gap: 20px;
+
+        & .buttons {
+            display: flex;
+            gap: 40px;
+
+            & button {
+                width: 60px;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                justify-content: center;
+                border-radius: 50%;
+                border: hidden;
+                background-color: transparent;
+                color: white;
+                font-size: 20px;
+                box-shadow: 1px 0px 10px 0.5px white;
+            }
+        }
+
+        & .buttons:first-child button,
+        & .buttons button:last-child {
+            color: #6dee0a;
+        }
+
+        & .buttons:last-child button:last-child {
+            background-color: #fb7c14;
+            color: white;
+        }
+    }
+}
+
+@media (width <=500px) {
+    .calculator .button .buttons {
+        gap: 22px;
+    }
+
+    .calculator {
+        max-width: 400px;
+        min-width: 330px;
+        margin: 10px;
+    }
+}

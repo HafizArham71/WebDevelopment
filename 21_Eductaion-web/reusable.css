@@ -1,0 +1,106 @@
+/* ?Font Importing */
+
+/** Poppins */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/** Urbanist */
+
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+/** Jost  */
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+/** Font Awesome */
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css');
+
+/**Ion Icon */
+
+@import url('https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.css');
+
+/* ?Basics */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins' , sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+/** Loader */
+
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    background-color: rgb(89, 87, 87);
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: calc(50% - 3.1rem);
+        top: calc(50% - 3.1rem);
+        width: 5rem;
+        height: 5rem;
+        background-color: transparent;
+        border: 6px solid transparent;
+        border-radius: 50%;
+        border-block: 6px solid burlywood;
+        animation: circularLoader .8s ease infinite;
+        -webkit-animation: circularLoader .8s ease infinite;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        color: white;
+        font-size: 3rem;
+        left: calc(50% - 1.65rem);
+        top: calc(50% - 1.65rem);
+        width: 2.5rem;
+        height: 2.5rem;
+        background-color: transparent;
+        border: 4px solid transparent;
+        transition: all .3s ease;
+        border-radius: 50%;
+        border-inline: 4px solid burlywood;
+        animation: circularLoader1 .8s ease infinite;
+        -webkit-animation: circularLoader1 .8s ease infinite;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .3s ease;
+        -ms-transition: all .3s ease;
+        -o-transition: all .3s ease;
+    }
+}
+
+@keyframes circularLoader {
+
+    100% {
+        border: 6px solid gray;
+        border-block: 6px solid burlywood;
+        rotate: 1turn;
+    }
+}
+
+@keyframes circularLoader1 {
+
+    100% {
+        border-inline: 4px solid burlywood;
+        rotate: 1turn;
+    }
+}

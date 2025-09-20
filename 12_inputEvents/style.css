@@ -1,0 +1,93 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fff url('images/joker.jpg') no-repeat 100% 100%;
+    height: 100vh;
+}
+
+.starsDiv {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: url('images/stars.png');
+    animation: starsMove 20s linear infinite forwards;
+}
+
+@keyframes starsMove {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 10% 100%;
+    }
+}
+
+.container {
+    width: 600px;
+    background-color: rgba(255, 255, 255, 0.166);
+    display: flex;
+    padding: 40px 30px;
+    border-radius: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dotted rgb(198, 178, 65);
+
+    & h1 {
+        color: white;
+        font-size: 35px;
+        letter-spacing: 2px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: bold;
+    }
+
+    & .input {
+        padding-top: 70px;
+        padding-bottom: 30px;
+
+        & input {
+            background-color: rgba(176, 144, 144, 0.938);
+            width: 500px;
+            height: 50px;
+            padding: 0 10px;
+            border-radius: 8px;
+            color: rgb(0, 0, 0);
+            font-size: 17px;
+            letter-spacing: 1px;
+            border: 1.5px solid rgb(198, 178, 65);
+            &::placeholder{
+                color: #fff;
+            }
+        }
+    }
+
+    & .list {
+        padding: 15px 20px;
+        width: 500px;
+        border-left: 3px solid white;
+        border-radius: 8px;
+        background-color: rgba(46, 45, 45, 0.409);
+
+        & p:last-child{
+            color: rgb(198, 178, 65);
+        }
+
+        & p {
+            color: white;
+            font-size: 20px;
+            letter-spacing: 1px;
+            padding: 20px 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    }
+}

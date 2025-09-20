@@ -1,0 +1,58 @@
+body {
+    background-color: #8aa7f7;
+    height: 100vh;
+}
+
+.container {
+    padding: 2rem;
+    background-color: white;
+    width: clamp(33rem, 50%, 60rem);
+    height: 65vh;
+    border: 2px solid white;
+    border-radius: 2.5rem;
+    -webkit-border-radius: 2.5rem;
+    -moz-border-radius: 2.5rem;
+    -ms-border-radius: 2.5rem;
+    -o-border-radius: 2.5rem;
+
+    h1 {
+        color: rgb(94, 85, 85);
+        text-align: center;
+        font-size: clamp(2.5rem, 2.7vw, 4rem);
+    }
+
+    textarea {
+        width: 95%;
+        height: 60%;
+        outline: none;
+        color: #78819b;
+        font-size: clamp(1.2rem, 2vw, 1.8rem);
+        padding: 2rem 1.5rem;
+        border: 1px solid rgb(122, 115, 115);
+        border-radius: 1rem;
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        -ms-border-radius: 1rem;
+        -o-border-radius: 1rem;
+
+        &::placeholder {
+            color: rgb(56, 50, 50);
+        }
+        &:focus{
+         border: 1.5px solid #8aa7f7;
+        }
+    }
+
+    button {
+        background-color: #8aa7f7;
+        padding: 2rem 0;
+        width: 95%;
+        border-radius: 1rem;
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        -ms-border-radius: 1rem;
+        -o-border-radius: 1rem;
+        color: white;
+        font-size: clamp(1.5rem, 2vw, 1.8rem);
+    }
+}

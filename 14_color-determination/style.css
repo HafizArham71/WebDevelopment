@@ -1,0 +1,87 @@
+body {
+    height: 100vh;
+    background: #fff url('images/shapes-image.png') no-repeat fixed center;
+    background-size: cover;
+}
+
+.element {
+    width: clamp(33rem, 50%, 50rem);
+    background-color: rgba(255, 255, 255, 0.058);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    margin:  0 1.5rem;
+    box-shadow: 0 0 1rem 1px rgba(255, 255, 255, 0.575), inset 0 0 1rem 1px rgba(0, 0, 0, 0.575);
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+
+    h1 {
+        font-size: 3.5rem;
+        text-align: center;
+        color: burlywood;
+        font-weight: 600;
+    }
+
+    .outputBox {
+        /* width: clamp(32rem , 80% , 40rem); */
+        height: 30rem;
+        width: 90%;
+        aspect-ratio: 1;
+        border: 2px solid white;
+        transition: all .3s linear;
+        border-radius: 2rem;
+        -webkit-border-radius: 2rem;
+        -moz-border-radius: 2rem;
+        -ms-border-radius: 2rem;
+        -o-border-radius: 2rem;
+        -webkit-transition: all .3s linear;
+        -moz-transition: all .3s linear;
+        -ms-transition: all .3s linear;
+        -o-transition: all .3s linear;
+    }
+
+    .input {
+        width: 90%;
+        gap: 1rem;
+        flex-wrap: wrap;
+
+        input {
+            flex: 1 0 25rem;
+            height: 4.5rem;
+            font-size: 1.5rem;
+            border-radius: 1rem;
+            -webkit-border-radius: 1rem;
+            -moz-border-radius: 1rem;
+            -ms-border-radius: 1rem;
+            -o-border-radius: 1rem;
+
+            &::placeholder {
+                font-size: 1.3rem;
+            }
+        }
+
+        button {
+            flex: 1 0 11rem;
+            padding: .8rem 0;
+            font-size: 1.6rem;
+        }
+    }
+}
+
+@media (width <= 950px) {
+    .element h1{
+        font-size: 3rem;
+    }
+}
+@media (width <= 770px) {
+    .element h1{
+        font-size: 2.5rem;
+    }
+}
+@media (width <= 400px) {
+    .element h1{
+        font-size: 2.3rem;
+    }
+}

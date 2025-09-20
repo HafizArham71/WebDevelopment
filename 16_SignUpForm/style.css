@@ -1,0 +1,199 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.1rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+#loader{
+  width: 100%;
+  height: 100vh;
+  background: #fff url("images/loader\(8\).gif") no-repeat fixed center;
+  position: fixed;
+  z-index: 2;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: #fff url("images/signIn_bg.jpg") no-repeat fixed center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .signInBox {
+    position: relative;
+    width: clamp(33rem, 80%, 50rem);
+    height: 50rem;
+    background-color: rgba(44, 41, 41, 0.208);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    backdrop-filter: blur(1.5rem);
+    border: 0.3rem solid transparent;
+    border-image: linear-gradient(to right top, #0064f1, #fddc85, #ff2965) 1;
+    border-radius: 1.5rem;
+    transition: all 0.3s ease;
+
+    .head {
+      position: relative;
+
+      h1 {
+        font-size: clamp(3.3rem, 2.8vw, 4rem);
+        color: white;
+        cursor: pointer;
+      }
+
+      .underLine {
+        position: absolute;
+        bottom: -1.5rem;
+        right: 50%;
+        transform: translateX(50%);
+        width: 25%;
+        height: 0.5rem;
+        border-radius: 1rem;
+        transition: all 0.3s ease;
+        background-color: #fddc85;
+        -webkit-transform: translateX(50%);
+        -moz-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+        -o-transform: translateX(50%);
+      }
+    }
+
+    .input {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      transition: all 0.3s ease;
+      width: clamp(28rem, 80%, 50rem);
+
+      .input_group {
+        position: relative;
+        width: 100%;
+        min-height: 6rem;
+
+        & input:focus {
+          border-bottom: 0.2rem solid #267af0;
+        }
+
+        & input:focus~ion-icon {
+          font-size: 2.3rem;
+        }
+
+        & input:focus~label,
+        & input:valid~label {
+          top: 0rem;
+          left: 1.5rem;
+          overflow: hidden;
+          font-size: 1.5rem;
+          color: #f6e79a;
+        }
+
+        
+        input:-webkit-autofill {
+          background-color: transparent !important;
+          color: white !important; /* Set the text color to white */
+          transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s;
+        }
+        
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+          background-color: transparent !important;
+          color: white !important; /* Ensure the text color stays white on hover, focus, and active states */
+        }
+        
+        input {
+          height: 100%;
+          width: 100%;
+          border-radius: 0.7rem;
+          border: hidden;
+          border-bottom: 0.2rem solid white;
+          padding: 0 4rem 0 1.5rem;
+          outline: none;
+          font-size: 1.5rem;
+          color: white;
+          background-color: transparent;
+          background-color: none;
+          transition: all 0.2s ease;
+        }
+
+        ion-icon {
+          position: absolute;
+          top: 50%;
+          right: 1rem;
+          transform: translateY(-50%);
+          color: white;
+          font-size: 2rem;
+          cursor: pointer;
+          transition: all 0.2s ease;
+        }
+
+        label {
+          color: white;
+          font-size: 1.5rem;
+          pointer-events: none;
+          position: absolute;
+          top: 50%;
+          left: 1.5rem;
+          transform: translateY(-50%);
+          transition: 0.5s;
+          -webkit-transition: 0.5s;
+          -moz-transition: 0.5s;
+          -ms-transition: 0.5s;
+          -o-transition: 0.5s;
+        }
+      }
+    }
+
+    .signUpSignInBox {
+      width: clamp(28rem, 80%, 50rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      button {
+        padding: 1rem 2rem;
+        font-size: 1.8rem;
+        border-radius: 0.5rem;
+        background-color: transparent;
+        border: 0.2rem solid white;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.1s ease;
+        cursor: pointer;
+
+        &:hover {
+          border-color: #ff2965;
+          justify-content: flex-end;
+        }
+
+        ion-icon {
+          padding-left: 0.5rem;
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}

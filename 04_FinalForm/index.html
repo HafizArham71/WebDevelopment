@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reusable.css">
+    <link rel="stylesheet" href="modern-resuable-code.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Login Form | Arham</title>
+</head>
+
+<body class="disp-flex algn-itm-cnter jstfy-cntnt-cnter">
+    <div id="loader"></div>
+    <div class="wrapperForm">
+        <form class="login disp-flex algn-itm-cnter jstfy-cntnt-cnter flex-dir-colmn" id="login" action="https://formspree.io/f/xjkbzrjv" method="post">
+            <h1>Login</h1>
+            <div class="input disp-flex algn-itm-cnter jstfy-cntnt-cnter flex-dir-colmn gap3">
+                <div class="input_group">
+                    <input type="text" id="name" name="Username:" required autocomplete="off" autofocus>
+                    <label for="name">Username:</label>
+                    <ion-icon name="person-outline"></ion-icon>
+                </div>
+                <div class="input_group">
+                    <input type="email" id="email" name="Email:" required autocomplete="off">
+                    <label for="email">Email</label>
+                    <ion-icon name="mail-outline"></ion-icon>
+                </div>
+                <div class="input_group">
+                    <input type="password" id="password1" name="Password:" required autocomplete="off">
+                    <label for="password">Password</label>
+                    <ion-icon name="eye-off-outline" id="eyeOff1"></ion-icon>
+                    <ion-icon name="eye-outline" style="display: none;" id="eyeOn1"></ion-icon>
+                </div>
+            </div>
+            <div class="remember flex aic jcsb">
+                <p><input type="checkbox" name="" id=""> Remember Me</p>
+                <p><a href="#">Forgot Password</a></p>
+            </div>
+            <div class="button">
+                <button type="submit">Submit</button>
+            </div>
+            <div class="alreadyAccount">
+                <p>Already Have An Account? <a href="#" id="btnSignup">Sign Up</a></p>
+            </div>
+        </form>
+        <form class="login disp-flex algn-itm-cnter jstfy-cntnt-cnter flex-dir-colmn" id="signup" action="https://formspree.io/f/mdknjzyk" method="post">
+            <h1>Sign Up</h1>
+            <div class="input disp-flex algn-itm-cnter jstfy-cntnt-cnter flex-dir-colmn gap3">
+                <div class="input_group">
+                    <input type="email" id="email" name="Email:" required autocomplete="off">
+                    <label for="email">Email</label>
+                    <ion-icon name="mail-outline"></ion-icon>
+                </div>
+                <div class="input_group">
+                    <input type="password" id="password2" name="Password:" required autocomplete="off">
+                    <label for="password">Password</label>
+                    <ion-icon name="eye-off-outline" id="eyeOn2"></ion-icon>
+                    <ion-icon name="eye-outline" style="display: none;" id="eyeOff2"></ion-icon>
+                </div>
+            </div>
+            <div class="remember flex aic jcsb">
+                <p><input type="checkbox" name="" id=""> Remember Me</p>
+                <p><a href="#">Forgot Password</a></p>
+            </div>
+            <div class="button">
+                <button type="submit">Submit</button>
+            </div>
+            <div class="alreadyAccount">
+                <p>Don't Have An Account? <a href="#" id="btnLogin">Login</a></p>
+            </div>
+        </form>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+    <script src="resuable.js"></script>
+</body>
+
+</html>

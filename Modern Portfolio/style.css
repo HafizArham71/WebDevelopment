@@ -1,0 +1,85 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Roboto", serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    --black-color: #212121;
+}
+
+body {
+    background: #fff url('images/background.png') no-repeat fixed center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+header {
+    width: 100%;
+    padding: 3rem 7.6vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a.logo {
+        width: 6rem;
+        height: 5.76rem;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    ol.links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4rem;
+
+        a {
+            position: relative;
+            padding: .5rem 0;
+            font-size: 1.6rem;
+            color: var(--black-color);
+            letter-spacing: 1px;
+
+            &:not(:last-child):before {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 0;
+                height: .2rem;
+                background-color: var(--black-color);
+                transition: all .3s ease;
+            }
+
+            &:not(:last-child):hover::before {
+                width: 100%;
+            }
+
+            &:last-child {
+                margin-left: 2rem;
+            }
+        }
+
+        a button {
+            font-size: 1.6rem;
+            padding: 1.4rem 1.6rem;
+            letter-spacing: 1px;
+            background-color: var(--black-color);
+            border: none;
+            border-radius: 1rem;
+            color: white;
+        }
+    }
+}

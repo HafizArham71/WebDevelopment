@@ -1,0 +1,55 @@
+/* loader.css */
+.preloader {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--clr-bg, #f3fafd);
+        transition: opacity .6s, visibility .6s;
+}
+
+.preloader.hide {
+        opacity: 0;
+        visibility: hidden;
+}
+
+.preloader__minimal {
+        position: relative;
+        width: 6.4rem;
+        height: 6.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+
+.loader-circle {
+        position: absolute;
+        width: 6.4rem;
+        height: 6.4rem;
+        border: .3rem solid var(--clr-border, #e5edff);
+        border-top: .3rem solid var(--clr-primary, #5563ff);
+        border-radius: 50%;
+        animation: spin 1.1s linear infinite;
+        box-shadow: 0 0 2.4rem 0 #5563ff33;
+        transition: border-top-color .3s, box-shadow .3s;
+}
+
+/* Your icons (palette, bulb, code). Keep as-is. */
+.loader-svg {
+        width: 3.6rem;
+        height: 3.6rem;
+        background: #fff;
+        padding: .7rem;
+        border-radius: 50%;
+        color: var(--clr-primary, #5563ff);
+        box-shadow: 0 .4rem 1.6rem rgba(85, 99, 255, .07);
+        transition: color .3s;
+}
+
+@keyframes spin {
+        to {
+                transform: rotate(360deg);
+        }
+}

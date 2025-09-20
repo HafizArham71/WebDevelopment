@@ -1,0 +1,160 @@
+/* 
+#1b367d
+#ff643b
+#3a114e
+#ec407a
+#262a30 
+*/
+
+*{
+  font-family: 'Poppins',sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to bottom right, #1b367d, #3a114e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: clamp(40rem, 70%, 45rem);
+  background-color: rgba(255, 255, 255, 1);
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 2px 29px 0px;
+
+  h1 {
+    color: #142859;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: left;
+    padding-bottom: 1rem;
+  }
+
+  .input-group {
+    width: 100%;
+    height: 4.5rem;
+    border-radius: 3rem;
+    position: relative;
+    margin-bottom: 1rem;
+
+    input {
+      width: 100%;
+      height: 100%;
+      background-color: #ebedee;
+      border: none;
+      border-radius: 3rem;
+      padding: 0 16rem 0 1.5rem;
+      color: #142859;
+      outline: none;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      transition: all .3s ease;
+
+      &::placeholder {
+        color: #8e9092;
+      }
+    }
+    .generateQrBtn {
+      position: absolute;
+      right: 0;
+      top: 0;
+      border: none;
+      background-color: #ff643b;
+      font-size: 1.5rem;
+      color: aliceblue;
+      height: 100%;
+      padding: 0 1.8rem;
+      border-radius: 3rem;
+    }
+  }
+
+  .shake {
+    border: 2px solid rgb(243, 58, 58);
+    animation: shake 0.2s ease infinite alternate;
+  }
+
+  .loading{
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #142859;
+    padding-bottom: 1rem;
+  }
+
+  .buttonDownload{
+    width: 100%;
+    display: flex;
+
+    a{
+      border: none;
+      background-color: #ff643b;
+      font-size: 1.5rem;
+      color: aliceblue;
+      letter-spacing: 1px;
+      padding: 1rem 1.5rem;
+      margin: 0 auto;
+      text-align: center;
+      cursor:not-allowed;
+      border-radius: 3rem;
+    }
+  }
+
+  .image {
+    width: 220px;
+    height: 0;
+    margin: 0 auto;
+    display: flex;
+    border-radius: 1rem;
+    transition: all 0.5s linear;
+    margin-bottom: 1rem;
+
+    img {
+      width: 90%;
+      height: 100%;
+      margin: 0 auto;
+    }
+  }
+  .button {
+    width: 100%;
+    display: flex;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(3px);
+  }
+  20% {
+    transform: translate(-3px);
+  }
+  40% {
+    transform: translate(3px);
+  }
+  60% {
+    transform: translate(-3px);
+  }
+  80% {
+    transform: translate(3px);
+  }
+  100% {
+    transform: translate(-3px);
+  }
+}
+
+
+@media (width <= 600px) {
+  html{
+    font-size: 52%;
+  }
+  .container h1{
+    font-size: 3rem;
+  }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="modern-resuable-code.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Password Project</title>
+</head>
+`
+
+<body>
+    <div id="loader"></div>
+    <div class="animatedWallpaper">
+    </div>
+    <div class="container">
+        <h1>User Identification.</h1>
+        <form action="">
+            <p id="wrong">Wrong Username and Password</p>
+       `     <p id="Invalid">Invalid Attempts</p>
+            <div class="input">
+                <div class="inputBox">
+                    <input type="username" name="" id="userName" required autocomplete="off" autofocus>
+                    <label for="">Enter Username</label>
+                    <lord-icon src="https://cdn.lordicon.com/acydszgh.json" trigger="loop" delay="2000">
+                    </lord-icon>
+                </div>
+                <div class="inputBox">
+                    <input type="password" name="" id="password" required autocomplete="off">
+                    <label for="">Enter Password</label>
+                    <ion-icon name="eye-off-outline" id="eyeOff"></ion-icon>
+                    <ion-icon name="eye-outline" id="eyeOn"></ion-icon>
+                </div>
+            </div>
+            <div class="submit">
+                <button type="submit" id="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="resuable.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

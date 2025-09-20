@@ -1,0 +1,136 @@
+[
+    {
+        "id": 1,
+        "name": "Laptop",
+       "category":"Computers",
+       "brands":"exampleBrand",
+       "price":999,
+       "stock": 50,
+       "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, iste dolor, suscipit inventore culpa quidem laboriosam incidunt, maxime nihil dolore similique nostrum? Nisi eaque consectetur itaque ad saepe maiores cupiditate!",
+       "image":"/public/images/laptop.png",
+       "rating":5
+    },
+    {
+        "id": 2,
+        "name": "Mobile",
+       "category":"Computers",
+       "brands":"exampleBrand",
+       "price":49,
+       "stock": 30,
+       "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, iste dolor, suscipit inventore culpa quidem laboriosam incidunt, maxime nihil dolore similique nostrum? Nisi eaque consectetur itaque ad saepe maiores cupiditate!",
+       "image":"/public/images/mobiles.png",
+       "rating":3
+    },
+    {
+        "id": 3,
+        "name": "HeadPhones",
+       "category":"Computers",
+       "brands":"exampleBrand",
+       "price":664,
+       "stock": 40,
+       "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, iste dolor, suscipit inventore culpa quidem laboriosam incidunt, maxime nihil dolore similique nostrum? Nisi eaque consectetur itaque ad saepe maiores cupiditate!",
+       "image":"/public/images/headphone.png",
+       "rating":4
+    },
+    {
+        "id": 4,
+        "name": "Mobile",
+       "category":"Computers",
+       "brands":"exampleBrand",
+       "price":89,
+       "stock": 60,
+       "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, iste dolor, suscipit inventore culpa quidem laboriosam incidunt, maxime nihil dolore similique nostrum? Nisi eaque consectetur itaque ad saepe maiores cupiditate!",
+       "image":"/public/images/iphone.png",
+       "rating":1
+
+    },
+    {
+        "id": 5,
+        "name": "Laptop",
+       "category":"Computers",
+       "brands":"exampleBrand",
+       "price":999,
+       "stock": 50,
+       "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, iste dolor, suscipit inventore culpa quidem laboriosam incidunt, maxime nihil dolore similique nostrum? Nisi eaque consectetur itaque ad saepe maiores cupiditate!",
+       "image":"/public/images/laptop1.png",
+       "rating":4
+    },
+    {
+        "id": 6,
+        "name": "HeadPhone",
+       "category":"Computers",
+       "brands":"exampleBrand",
+       "price":59,
+       "stock": 40,
+       "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, iste dolor, suscipit inventore culpa quidem laboriosam incidunt, maxime nihil dolore similique nostrum? Nisi eaque consectetur itaque ad saepe maiores cupiditate!",
+       "image":"/public/images/headphoneEcom.png",
+       "rating":2
+    },
+    {
+        "id": 1,
+        "name": "Laptop",
+       "category":"Computers",
+       "brands":"exampleBrand",
+       "price":999,
+       "stock": 50,
+       "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, iste dolor, suscipit inventore culpa quidem laboriosam incidunt, maxime nihil dolore similique nostrum? Nisi eaque consectetur itaque ad saepe maiores cupiditate!",
+       "image":"/public/images/laptop.png",
+       "rating":5
+    },
+    {
+        "id": 2,
+        "name": "Mobile",
+       "category":"Computers",
+       "brands":"exampleBrand",
+       "price":49,
+       "stock": 30,
+       "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, iste dolor, suscipit inventore culpa quidem laboriosam incidunt, maxime nihil dolore similique nostrum? Nisi eaque consectetur itaque ad saepe maiores cupiditate!",
+       "image":"/public/images/mobiles.png",
+       "rating":3
+    },
+    {
+        "id": 3,
+        "name": "HeadPhones",
+       "category":"Computers",
+       "brands":"exampleBrand",
+       "price":664,
+       "stock": 40,
+       "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, iste dolor, suscipit inventore culpa quidem laboriosam incidunt, maxime nihil dolore similique nostrum? Nisi eaque consectetur itaque ad saepe maiores cupiditate!",
+       "image":"/public/images/headphone.png",
+       "rating":4
+    },
+    {
+        "id": 4,
+        "name": "Mobile",
+       "category":"Computers",
+       "brands":"exampleBrand",
+       "price":89,
+       "stock": 60,
+       "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, iste dolor, suscipit inventore culpa quidem laboriosam incidunt, maxime nihil dolore similique nostrum? Nisi eaque consectetur itaque ad saepe maiores cupiditate!",
+       "image":"/public/images/iphone.png",
+       "rating":1
+
+    },
+    {
+        "id": 5,
+        "name": "Laptop",
+       "category":"Computers",
+       "brands":"exampleBrand",
+       "price":999,
+       "stock": 50,
+       "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, iste dolor, suscipit inventore culpa quidem laboriosam incidunt, maxime nihil dolore similique nostrum? Nisi eaque consectetur itaque ad saepe maiores cupiditate!",
+       "image":"/public/images/laptop1.png",
+       "rating":4
+    },
+    {
+        "id": 6,
+        "name": "HeadPhone",
+       "category":"Computers",
+       "brands":"exampleBrand",
+       "price":59,
+       "stock": 40,
+       "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, iste dolor, suscipit inventore culpa quidem laboriosam incidunt, maxime nihil dolore similique nostrum? Nisi eaque consectetur itaque ad saepe maiores cupiditate!",
+       "image":"/public/images/headphoneEcom.png",
+       "rating":2
+    }
+]

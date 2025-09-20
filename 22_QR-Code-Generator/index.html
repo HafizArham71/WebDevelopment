@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="modern-reusable.css">
+    <link rel="stylesheet" href="style.css">
+    <title>QR Code Generator | Home</title>`
+</head>
+<body>
+    <div id="loader"></div>
+    <form class="container">
+        <h1>QR-Code Generator!</h1>
+        <div class="input-group">
+            <input type="text" class="inputElem" placeholder="Enter Text Or URL" required autofocus>
+            <button type="submit" class="generateQrBtn">Create QR Code</button>
+        </div>
+        <div class="image">
+            <img src="" class="qrImage">
+        </div>
+        <p class="loading" style="display: none;">Loading.....</p>
+        <div class="buttonDownload">
+            <a href class="downloadBtn">Download Image</a>
+        </div>
+    </form>
+    <!-- <img src="../portfolio/images/Screenshot (39).png" alt="" style="max-width: 100%; height: auto;"> -->
+    <script src="resuable.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

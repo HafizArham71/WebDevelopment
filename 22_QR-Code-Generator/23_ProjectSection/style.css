@@ -1,0 +1,9 @@
+html{
+        font-size: 62.5%;
+}
+
+.container {
+        width: min(95%, 1440px);
+        margin: 0 auto;
+        padding: var(--space-md) var(--space-xl)
+}

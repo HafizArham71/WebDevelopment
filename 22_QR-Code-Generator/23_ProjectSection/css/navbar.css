@@ -1,0 +1,181 @@
+/* ===== Navbar (navbar.css) ===== */
+
+.navbar {
+        width: 100%;
+        position: sticky;
+        top: var(--space-sm, 0.8rem);
+        display: flex;
+        justify-content: center;
+        z-index: 999;
+        transition: top .3s;
+}
+
+/* Shell */
+.navbar__box {
+        background: rgba(255, 255, 255, .95);
+        backdrop-filter: blur(10px);
+        border-radius: var(--radius-xl, 4rem);
+        width: min(95%, 1440px);
+        box-shadow: var(--shadow-navbar, 0 12px 48px 0 rgba(0, 0, 0, .07));
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 1.4rem;
+        transition: box-shadow .3s;
+        padding: var(--space-md, 1.6rem) var(--space-xl, 4rem);
+}
+
+.navbar__box:hover {
+        box-shadow: var(--shadow-navbar-hover, 0 16px 56px 0 rgba(0, 0, 0, .08));
+}
+
+/* Note: this fixes the old selector .navbar__box .scrolled */
+.navbar__box.scrolled {
+        box-shadow: 0 12px 48px 0 rgba(233, 233, 233, .12);
+}
+
+/* Brand */
+.brand {
+        font-weight: 700;
+        font-size: 2rem;
+}
+
+/* Links area */
+.navlinks {
+        position: relative;
+        padding: .8rem 0;
+}
+
+.navlinks ul {
+        display: flex;
+        gap: 3.2rem;
+        list-style: none;
+        font-weight: 400;
+        font-size: 1.3rem;
+}
+
+.nav-link {
+        color: var(--clr-muted, #6d6d79);
+        text-decoration: none;
+        padding: .8rem 0;
+        transition: color .3s;
+}
+
+.nav-link:hover {
+        color: #000;
+}
+
+.nav-link.active {
+        font-weight: 600;
+        color: #000;
+}
+
+/* Underline indicator */
+.link-indicator {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: .3rem;
+        background-color: var(--clr-primary, #5563ff);
+        border-radius: .2rem;
+        width: 0;
+        transition: left .35s, width .35s;
+}
+
+/* Hire button (kept here as part of nav) */
+.hire-btn {
+        background: var(--clr-primary, #5563ff);
+        color: #fff;
+        font-weight: 600;
+        padding: 1.6rem 3.2rem;
+        border-radius: var(--radius-xl, 4rem);
+        gap: .8rem;
+        display: inline-flex;
+        align-items: center;
+        box-shadow: 0 1.2rem 4.8rem 0 #c7caff;
+        transition: .3s;
+        text-decoration: none;
+}
+
+.hire-btn:hover {
+        background: var(--clr-primary-dark, #3e47d7);
+        transform: translateY(-2px);
+        box-shadow: 0 1.6rem 5.6rem 0 #a6a6da;
+}
+
+/* Hamburger */
+.hamburger {
+        display: none;
+        background: transparent;
+        border: 0;
+        margin-left: 1.5rem;
+        z-index: 1101;
+        font-size: 2.78rem;
+        color: var(--clr-secondary, #333);
+        transition: color .3s;
+}
+
+.hamburger:hover {
+        color: var(--clr-primary, #5563ff);
+}
+
+/* Mobile drawer */
+@media (max-width: 900px) {
+        .hamburger {
+                display: block;
+        }
+
+        .navlinks {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 80vw;
+                max-width: 340px;
+                height: 100vh;
+                background: #fff;
+                box-shadow: -2px 0 24px rgba(0, 0, 0, .08);
+                border-radius: var(--radius-xl, 4rem) 0 0 var(--radius-xl, 4rem);
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding: 7rem 2rem 2rem;
+                gap: 2rem;
+                transform: translateX(100%);
+                transition: transform .35s cubic-bezier(.77, 0, .18, 1);
+                z-index: 1100;
+        }
+
+        .navlinks.open {
+                transform: translateX(0);
+        }
+
+        .navlinks ul {
+                flex-direction: column;
+                gap: 2.5rem;
+                width: 100%;
+                align-items: flex-start;
+                font-size: 1.8rem;
+                background: transparent;
+                box-shadow: none;
+                padding: 0;
+        }
+
+        .link-indicator {
+                display: none;
+        }
+
+        .hire-btn {
+                width: 100%;
+                justify-content: center;
+                margin: 2rem 0 0;
+        }
+
+        .navbar__box {
+                padding: var(--space-md, 1.6rem) var(--space-sm, .8rem);
+        }
+
+        body.menu-open {
+                overflow: hidden;
+        }
+}

@@ -1,0 +1,146 @@
+body {
+    background: #fff url('images/bg1.jpg') no-repeat fixed center;
+    background-size: cover;
+    width: 100%;
+    position: relative;
+}
+.starDiv{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: url('images/stars.png') repeat-y fixed center;
+    animation: starsMove 20s linear infinite forwards;
+}
+@keyframes starsMove {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 10% 100%;
+    }
+}
+
+
+body>.flex {
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 1rem 1px white;
+    flex-direction: column;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.container {
+    padding: 3rem;
+    min-height: 40vh;
+    /* max-height: auto; */
+    width: clamp(45rem , 60% , 60rem);
+    margin: 5rem 1rem 3rem 1rem;
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -ms-transition: all .3s linear;
+    -o-transition: all .3s linear;
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+
+.input {
+    width: 100%;
+
+    input {
+        height: 5.5rem;
+        width: 70%;
+    }
+
+    button {
+        border: 3px solid #F5F16C;
+        color: rgb(70, 63, 63);
+        font-weight: 600;
+        background-color: #F5F16C;
+        padding:0 ;
+        height: 5.5rem;
+        width: 13rem;
+        transition: all .3s linear;
+        -webkit-transition: all .3s linear;
+        -moz-transition: all .3s linear;
+        -ms-transition: all .3s linear;
+        -o-transition: all .3s linear;
+        border-radius: 1rem;
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        -ms-border-radius: 1rem;
+        -o-border-radius: 1rem;
+
+        &:hover {
+            background-color: transparent;
+            color: white;
+        }
+    }
+}
+
+.todoList {
+    width: 100%;
+}
+
+.mainTodo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40rem;
+    margin-bottom: 1rem;
+
+    li {
+        list-style: circle;
+    }
+}
+
+.deleteBtn {
+    border: 3px solid #F5F16C;
+    background-color: #F5F16C;
+    color: rgb(70, 63, 63);
+    font-weight: 600;
+    border-radius: 3rem;
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -ms-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    -webkit-border-radius: 3rem;
+    -moz-border-radius: 3rem;
+    -ms-border-radius: 3rem;
+    -o-border-radius: 3rem;
+
+    &:hover {
+        background-color: transparent;
+        color: white;
+    }
+}
+@media (width <= 660px) {
+    html{
+        font-size: 52%;
+    }
+    .container{
+        padding: 2rem;
+        .input{
+            gap: 1rem;
+        }
+    }
+}
+@media (width <= 400px) {
+    .container{
+        padding: 2rem 1rem;
+    }
+}

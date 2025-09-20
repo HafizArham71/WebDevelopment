@@ -1,0 +1,184 @@
+/* ?Basics */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+/* ?Themes */
+
+:root {
+    --body-bg-color: #1e1e1e;
+    --white-color: white;
+}
+
+/* ?Reusable */
+.grid {
+    display: grid;
+}
+
+.grid-two-cols {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+p {
+    font-size: 1.7rem;
+}
+
+/* ?States */
+
+
+body {
+    width: 100%;
+    background-color: var(--body-bg-color);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    padding: 2rem;
+    min-width: 40rem;
+    margin: 2rem;
+    border-radius: 2rem;
+    width: 70rem;
+    color: var(--body-bg-color);
+    background-color: rgba(193, 239, 239, 0.736);
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+
+    &>.flex {
+        position: relative;
+        justify-content: flex-start;
+        width: 20rem;
+
+        input {
+            background-color: var(--body-bg-color);
+            border: hidden;
+            width: 100%;
+            padding: .7rem .7rem .7rem 3rem;
+            color: var(--white-color);
+            outline: none;
+            border-radius: .5rem;
+            -webkit-border-radius: .5rem;
+            -moz-border-radius: .5rem;
+            -ms-border-radius: .5rem;
+            -o-border-radius: .5rem;
+
+            &::placeholder {
+                color: var(--white-color);
+            }
+        }
+
+        i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            font-size: 1.2rem;
+            color: var(--white-color);
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+        }
+    }
+
+    .countryContent {
+        width: 100%;
+        padding: 3rem 0 1rem 0;
+        flex-direction: column;
+
+        h1 {
+            font-size: 2.7rem;
+            text-align: center;
+
+            &+p {
+                padding: .5rem 0;
+
+                &+h3 {
+                    background-color: var(--body-bg-color);
+                    padding: 1rem 1.5rem;
+                    color: var(--white-color);
+                    font-size: 1.7rem;
+                    margin-bottom: 1rem;
+                    font-weight: 500;
+                    border-radius: 1.5rem;
+                    -webkit-border-radius: 1.5rem;
+                    -moz-border-radius: 1.5rem;
+                    -ms-border-radius: 1.5rem;
+                    -o-border-radius: 1.5rem;
+
+                        &+p {
+                            font-size: 3.5rem;
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+        }
+        p:nth-child(5){
+            padding: 0;
+            font-size: 3rem;
+        }
+    }
+
+    .weatherProperties {
+        .flex {
+            justify-content: flex-start;
+        }
+
+        .box {
+            color: var(--body-bg-color);
+            padding: 2rem;
+            box-shadow: rgba(100, 100, 111, .2) 0 .7rem 2.9rem 0;
+
+            &>i {
+                font-size: 2rem;
+                display: block;
+                padding-right: 1rem;
+
+                &+.info h4 {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+@media (width <= 500px) {
+    html{
+        font-size: 52%;
+    }
+    .grid-two-cols{
+        grid-template-columns: 1fr;
+    }
+    .countryContent{
+        padding: 2rem 0;
+    }
+    .container{
+        margin: 1rem;
+        padding: 1rem;
+    }
+    .weatherProperties .box{
+        padding: 1.5rem;
+    }
+    .countryContent p:nth-child(5){
+        font-size: 4rem;
+    }
+}

@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Pro Footer – Single File</title>
+        <style>
+                :root {
+                        --bg-1: #0f0f11;
+                        --bg-2: #141416;
+                        --card: #1a1b1f;
+                        --text: #e8e8ea;
+                        --muted: #a3a3ad;
+                        --border: #2a2b31;
+                        --primary: #6b46ff;
+                        --primary-600: #5a35f2;
+                        --primary-700: #4b2bd9;
+                        --ring: 0 0 0 3px rgba(107, 70, 255, .35);
+                        --radius-lg: 16px;
+                        --radius-md: 12px;
+                        --radius-sm: 10px;
+                        --shadow-1: 0 10px 30px rgba(0, 0, 0, .35), 0 2px 6px rgba(0, 0, 0, .3);
+                }
+
+                * {
+                        box-sizing: border-box
+                }
+
+                html,
+                body {
+                        height: 100%
+                }
+
+                body {
+                        margin: 0;
+                        color: var(--text);
+                        background: radial-gradient(1200px 600px at 8% 12%, rgba(107, 70, 255, .12), transparent 50%),
+                                radial-gradient(900px 500px at 85% 80%, rgba(21, 130, 255, .1), transparent 60%),
+                                linear-gradient(120deg, var(--bg-1), var(--bg-2));
+                        font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+                        -webkit-font-smoothing: antialiased;
+                        text-rendering: optimizeLegibility;
+                }
+
+                a {
+                        color: inherit;
+                        text-decoration: none
+                }
+
+                a:hover {
+                        color: #fff
+                }
+
+                img {
+                        max-width: 100%;
+                        display: block
+                }
+
+                button {
+                        font: inherit
+                }
+
+                .container {
+                        width: min(1200px, 92vw);
+                        margin-inline: auto;
+                        padding: 72px 0 40px;
+                }
+
+                footer {
+                        position: relative;
+                        border-top: 1px solid rgba(255, 255, 255, .06);
+                        overflow: clip;
+                }
+
+                footer::before {
+                        /* subtle vignette */
+                        content: "";
+                        position: absolute;
+                        inset: -30% -10% auto -10%;
+                        height: 260px;
+                        background: radial-gradient(400px 200px at 12% 35%, rgba(107, 70, 255, .22), transparent 65%);
+                        pointer-events: none;
+                        filter: blur(10px);
+                }
+
+                .grid {
+                        display: grid;
+                        gap: 44px
+                }
+
+                .grid-four-cols {
+                        grid-template-columns: 1.75fr 1fr 1fr 1fr
+                }
+
+                .grid-two-cols {
+                        grid-template-columns: 1.2fr 1fr;
+                        align-items: start
+                }
+
+                .grid-three-cols {
+                        grid-template-columns: 1.2fr 1fr 1fr;
+                        align-items: center
+                }
+
+                /* CTA */
+                .section-cta .heading h2 {
+                        margin: 0 0 14px;
+                        font-weight: 800;
+                        font-size: clamp(28px, 3.2vw, 44px);
+                        letter-spacing: .2px;
+                }
+
+                .section-cta .para p {
+                        margin: 0;
+                        color: var(--muted);
+                        max-width: 54ch;
+                }
+
+                .btn {
+                        margin-top: 28px;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 10px;
+                        background: var(--primary);
+                        color: white;
+                        border: none;
+                        padding: 14px 18px 14px 16px;
+                        border-radius: 12px;
+                        font-weight: 600;
+                        transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+                        box-shadow: 0 8px 24px rgba(107, 70, 255, .28);
+                        cursor: pointer;
+                }
+
+                .btn:hover {
+                        background: var(--primary-600);
+                        transform: translateY(-1px)
+                }
+
+                .btn:active {
+                        transform: translateY(0)
+                }
+
+                .btn svg {
+                        width: 18px;
+                        height: 18px;
+                        flex: 0 0 18px
+                }
+
+                /* Link columns */
+                .col-title {
+                        font-weight: 700;
+                        margin: 0 0 14px;
+                        font-size: 18px;
+                }
+
+                .linkstack {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 12px
+                }
+
+                .linkstack a {
+                        color: var(--muted);
+                        transition: color .2s ease, transform .2s ease;
+                }
+
+                .linkstack a:hover {
+                        color: #fff;
+                        transform: translateX(2px)
+                }
+
+                .linkstack a:focus-visible {
+                        outline: none;
+                        box-shadow: var(--ring);
+                        border-radius: 8px;
+                        padding: 2px
+                }
+
+                /* Social + subscribe */
+                .social-media-links {
+                        display: flex;
+                        align-items: center;
+                        gap: 14px;
+                        flex-wrap: wrap;
+                        color: var(--muted);
+                }
+
+                .social-media-links .label {
+                        margin-right: 6px
+                }
+
+                .socials {
+                        display: flex;
+                        gap: 14px
+                }
+
+                .social-icon {
+                        width: 42px;
+                        height: 42px;
+                        display: grid;
+                        place-items: center;
+                        border: 1px solid var(--border);
+                        border-radius: 12px;
+                        color: var(--muted);
+                        background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
+                        transition: border-color .2s ease, color .2s ease, transform .2s ease, background .2s ease;
+                }
+
+                .social-icon:hover {
+                        color: #fff;
+                        border-color: #3a3a43;
+                        transform: translateY(-2px)
+                }
+
+                .social-icon svg {
+                        width: 19px;
+                        height: 19px
+                }
+
+                .form-subscribe .card {
+                        margin-left: auto;
+                        max-width: 560px;
+                        background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .03));
+                        border: 1px solid var(--border);
+                        border-radius: var(--radius-lg);
+                        padding: 24px;
+                        box-shadow: var(--shadow-1);
+                }
+
+                .form-subscribe h3 {
+                        margin: 0 0 6px;
+                        font-size: 20px
+                }
+
+                .form-subscribe p {
+                        margin: 0 0 18px;
+                        color: var(--muted)
+                }
+
+                .subscribe-row {
+                        display: flex;
+                        gap: 14px;
+                        align-items: center;
+                }
+
+                .input {
+                        appearance: none;
+                        width: 100%;
+                        padding: 14px 14px;
+                        border-radius: 12px;
+                        border: 1px solid #2a2b31;
+                        background: #101114;
+                        color: #eaeaf0;
+                        outline: none;
+                        transition: box-shadow .2s ease, border-color .2s ease, background .2s ease;
+                }
+
+                .input::placeholder {
+                        color: #6f7079
+                }
+
+                .input:focus {
+                        box-shadow: var(--ring);
+                        border-color: #3c3d46
+                }
+
+                .subscribe-btn {
+                        white-space: nowrap;
+                        padding: 12px 16px;
+                        border-radius: 12px;
+                        border: 0;
+                        color: #fff;
+                        background: var(--primary);
+                        font-weight: 700;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 10px;
+                        box-shadow: 0 10px 24px rgba(107, 70, 255, .32);
+                        cursor: pointer;
+                        transition: background .2s ease, transform .2s ease;
+                }
+
+                .subscribe-btn:hover {
+                        background: var(--primary-600);
+                        transform: translateY(-1px)
+                }
+
+                .subscribe-btn:active {
+                        transform: translateY(0)
+                }
+
+                .subscribe-btn svg {
+                        width: 18px;
+                        height: 18px
+                }
+
+                .subscribe-note {
+                        margin-top: 12px;
+                        font-size: 14px;
+                        color: #9aa0ab;
+                        min-height: 20px;
+                }
+
+                .success {
+                        color: #7ad27a
+                }
+
+                .error {
+                        color: #ff8b8b
+                }
+
+                /* Divider before bottom row */
+                .footer-divider {
+                        height: 1px;
+                        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .08), transparent);
+                        margin: 36px 0 20px;
+                }
+
+                /* Bottom row */
+                .profile {
+                        display: flex;
+                        align-items: center;
+                        gap: 14px;
+                }
+
+                .avatar {
+                        width: 38px;
+                        height: 38px;
+                        border-radius: 12px;
+                        display: grid;
+                        place-items: center;
+                        color: #fff;
+                        background: var(--primary);
+                        font-weight: 800;
+                        letter-spacing: .4px;
+                        box-shadow: 0 6px 16px rgba(107, 70, 255, .35);
+                        flex: 0 0 38px;
+                }
+
+                .who small {
+                        color: var(--muted)
+                }
+
+                .copyRight {
+                        text-align: center;
+                        color: var(--muted)
+                }
+
+                .madeBy {
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+                        gap: 10px;
+                        color: var(--muted)
+                }
+
+                .heart {
+                        position: relative;
+                        width: 10px;
+                        height: 10px;
+                        display: inline-block;
+                        transform: translateY(2px) rotate(-45deg);
+                        background: #ff5e8a;
+                        border-radius: 2px 2px 0 0;
+                }
+
+                .heart::before,
+                .heart::after {
+                        content: "";
+                        position: absolute;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        background: #ff5e8a;
+                }
+
+                .heart::before {
+                        top: -5px;
+                        left: 0
+                }
+
+                .heart::after {
+                        left: 5px;
+                        top: 0
+                }
+
+                /* Responsive */
+                @media (max-width: 1024px) {
+                        .grid-four-cols {
+                                grid-template-columns: 1.5fr 1fr
+                        }
+
+                        .grid-two-cols {
+                                grid-template-columns: 1fr
+                        }
+
+                        .grid-three-cols {
+                                grid-template-columns: 1fr;
+                                gap: 16px
+                        }
+
+                        .form-subscribe .card {
+                                margin-left: 0
+                        }
+
+                        .copyRight {
+                                text-align: left
+                        }
+
+                        .madeBy {
+                                justify-content: flex-start
+                        }
+                }
+
+                @media (max-width: 640px) {
+                        .grid-four-cols {
+                                grid-template-columns: 1fr
+                        }
+
+                        .social-media-links {
+                                gap: 10px
+                        }
+
+                        .subscribe-row {
+                                flex-direction: column;
+                                align-items: stretch
+                        }
+
+                        .subscribe-btn {
+                                justify-content: center
+                        }
+                }
+
+                /* Reduced motion */
+                @media (prefers-reduced-motion: reduce) {
+
+                        .btn,
+                        .subscribe-btn,
+                        .social-icon {
+                                transition: none
+                        }
+                }
+        </style>
+</head>
+
+<body>
+
+        <!-- Footer -->
+        <footer>
+                <div class="container">
+                        <div class="grid grid-four-cols">
+                                <div class="section-cta">
+                                        <div class="heading">
+                                                <h2>Let's Create Something Amazing</h2>
+                                        </div>
+                                        <div class="para">
+                                                <p>Ready to bring your vision to life? I'm here to help you build
+                                                        exceptional digital experiences that make a lasting impact.</p>
+                                        </div>
+                                        <div class="button">
+                                                <button class="btn" id="contactBtn" aria-label="Contact us">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                                stroke-width="2">
+                                                                <path d="M20 6L9 17l-5-5" stroke-linecap="round"
+                                                                        stroke-linejoin="round" />
+                                                        </svg>
+                                                        Contact Us
+                                                </button>
+                                        </div>
+                                </div>
+
+                                <div class="navigation">
+                                        <p class="col-title">Navigation</p>
+                                        <nav class="linkstack" aria-label="Footer Navigation">
+                                                <a href="#">Home</a>
+                                                <a href="#">About</a>
+                                                <a href="#">Services</a>
+                                                <a href="#">Portfolio</a>
+                                                <a href="#">Contact</a>
+                                        </nav>
+                                </div>
+
+                                <div class="services">
+                                        <p class="col-title">Services</p>
+                                        <div class="linkstack">
+                                                <a href="#">Web Design</a>
+                                                <a href="#">Development</a>
+                                                <a href="#">Branding</a>
+                                                <a href="#">Consulting</a>
+                                                <a href="#">Support</a>
+                                        </div>
+                                </div>
+
+                                <div class="resources">
+                                        <p class="col-title">Resources</p>
+                                        <div class="linkstack">
+                                                <a href="#">Blog</a>
+                                                <a href="#">Case Studies</a>
+                                                <a href="#">Testimonials</a>
+                                                <a href="#">FAQ</a>
+                                                <a href="#">Privacy Policy</a>
+                                        </div>
+                                </div>
+                        </div>
+
+                        <div class="grid grid-two-cols" style="margin-top:36px;">
+                                <div class="social-media-links">
+                                        <span class="label">Follow me:</span>
+                                        <div class="socials">
+                                                <a class="social-icon" href="#" aria-label="Twitter">
+                                                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                                                <path
+                                                                        d="M18.244 2H21.5l-7.5 8.57L22.5 22h-5.85l-6.03-7.29L3.9 22H.64l8.06-9.2L1 2h6.01l5.47 6.69L18.244 2Zm-1.03 18h1.6L7.05 4h-1.7l11.864 16Z" />
+                                                        </svg>
+                                                </a>
+                                                <a class="social-icon" href="#" aria-label="LinkedIn">
+                                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                                                <path
+                                                                        d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.25h4V23h-4V8.25zM8.5 8.25h3.83v2.01h.05c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V23h-4v-5.95c0-1.42-.03-3.24-1.98-3.24-1.98 0-2.28 1.54-2.28 3.13V23h-4V8.25z" />
+                                                        </svg>
+                                                </a>
+                                                <a class="social-icon" href="#" aria-label="GitHub">
+                                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                        d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.57.1.78-.25.78-.56v-2.04c-3.18.69-3.85-1.37-3.85-1.37-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.02 1.75 2.67 1.24 3.32.95.1-.74.4-1.24.73-1.52-2.54-.29-5.22-1.27-5.22-5.66 0-1.25.45-2.27 1.19-3.07-.12-.3-.52-1.53.11-3.18 0 0 .98-.31 3.21 1.17a11.2 11.2 0 0 1 5.85 0c2.22-1.48 3.2-1.17 3.2-1.17.63 1.65.23 2.88.11 3.18a4.35 4.35 0 0 1 1.19 3.07c0 4.4-2.68 5.37-5.23 5.66.41.35.78 1.03.78 2.08v3.08c0 .31.21.67.79.55A11.5 11.5 0 0 0 12 .5Z" />
+                                                        </svg>
+                                                </a>
+                                                <a class="social-icon" href="#" aria-label="Dribbble">
+                                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                                                <path
+                                                                        d="M12 2C6.48 2 2 6.48 2 12a10 10 0 1 0 10-10Zm6.84 7.37a7.9 7.9 0 0 0-4.22-3.74c.6.82 1.14 1.73 1.61 2.7 1.06.07 2.07.45 2.61 1.04ZM12 3.6a8.4 8.4 0 0 1 3.29.66 17.1 17.1 0 0 0-2.9 1.3c-.82-1.2-1.7-2.2-2.53-2.95.66-.01 1.32-.01 2.14-.01Zm-3.72.69c.84.74 1.75 1.79 2.61 3.03-2.13.7-4.62 1.17-7 1.23a8.44 8.44 0 0 1 4.39-4.26ZM3.58 12.1q0-.38.03-.75c2.86-.04 5.85-.57 8.28-1.47.3.54.58 1.1.84 1.68-3.52 1.2-6.24 3.77-7.75 6.95A8.37 8.37 0 0 1 3.58 12.1Zm2.3 6.04c1.36-2.8 3.75-4.93 6.83-5.96.69 1.86 1.12 3.97 1.25 6.23-2.86.7-5.95.5-8.08-.27Zm9.86.07a24.6 24.6 0 0 0-1.14-5.58c1.53-.22 3.28-.16 5.23.21a8.46 8.46 0 0 1-4.09 5.37Zm-2.19-7.15a24.7 24.7 0 0 0-.87-1.67c1.04-.35 2.08-.75 3.1-1.2.29.6.54 1.21.76 1.82-1.08.22-2.1.5-3 .95Z" />
+                                                        </svg>
+                                                </a>
+                                        </div>
+                                </div>
+
+                                <div class="form-subscribe">
+                                        <div class="card" role="region" aria-labelledby="subscribeTitle">
+                                                <h3 id="subscribeTitle">Stay Updated</h3>
+                                                <p>Get the latest insights, tips, and project updates delivered to your
+                                                        inbox.</p>
+                                                <form class="subscribe-row" id="subscribeForm" novalidate>
+                                                        <input class="input" id="email" name="email" type="email"
+                                                                inputmode="email" placeholder="Enter your email"
+                                                                aria-describedby="subscribeNote" required />
+                                                        <button class="subscribe-btn" id="subscribeBtn" type="submit">
+                                                                <svg viewBox="0 0 24 24" fill="none"
+                                                                        stroke="currentColor" stroke-width="2">
+                                                                        <path d="M20 6L9 17l-5-5" stroke-linecap="round"
+                                                                                stroke-linejoin="round" />
+                                                                </svg>
+                                                                Subscribe
+                                                        </button>
+                                                </form>
+                                                <div class="subscribe-note" id="subscribeNote" aria-live="polite"></div>
+                                        </div>
+                                </div>
+                        </div>
+
+                        <div class="footer-divider" role="presentation"></div>
+
+                        <div class="grid grid-three-cols">
+                                <div class="name">
+                                        <div class="profile">
+                                                <div class="avatar" aria-hidden="true">A</div>
+                                                <div class="who">
+                                                        <strong>Alex Carter</strong><br>
+                                                        <small>Creative Developer & Designer</small>
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <div class="copyRight">
+                                        © <span id="year"></span> Your Name. All rights reserved.
+                                </div>
+
+                                <div class="madeBy">
+                                        <span>Made with</span>
+                                        <span class="heart" aria-hidden="true"></span>
+                                </div>
+                        </div>
+                </div>
+        </footer>
+
+        <script>
+                // Auto year
+                document.getElementById('year').textContent = new Date().getFullYear();
+
+                // Smooth scroll to contact (demo)
+                const contactBtn = document.getElementById('contactBtn');
+                contactBtn?.addEventListener('click', () => {
+                        // In a real site, you'd scroll to or open your contact section/modal.
+                        contactBtn.blur();
+                        contactBtn.style.transform = 'translateY(0)';
+                        contactBtn.animate([{ transform: 'translateY(0)' }, { transform: 'translateY(-2px)' }, { transform: 'translateY(0)' }], { duration: 300 });
+                });
+
+                // Subscribe form logic
+                const form = document.getElementById('subscribeForm');
+                const email = document.getElementById('email');
+                const note = document.getElementById('subscribeNote');
+                const btn = document.getElementById('subscribeBtn');
+
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+
+                form.addEventListener('submit', async (e) => {
+                        e.preventDefault();
+                        note.className = 'subscribe-note';
+                        const value = email.value.trim();
+
+                        if (!emailRegex.test(value)) {
+                                note.textContent = 'Please enter a valid email address.';
+                                note.classList.add('error');
+                                email.focus();
+                                email.setAttribute('aria-invalid', 'true');
+                                return;
+                        }
+                        email.removeAttribute('aria-invalid');
+
+                        // Fake async submit
+                        btn.disabled = true;
+                        btn.style.opacity = '.85';
+                        btn.textContent = 'Subscribing...';
+
+                        await new Promise(r => setTimeout(r, 900));
+
+                        btn.textContent = 'Subscribed';
+                        btn.insertAdjacentHTML('beforeend', ' <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+                        note.textContent = 'Thanks! Please check your inbox for a confirmation.';
+                        note.classList.add('success');
+
+                        // Optional: persist locally
+                        try { localStorage.setItem('subscribedEmail', value); } catch { }
+                        email.value = '';
+                });
+
+                // Prefill from localStorage if present
+                try {
+                        const saved = localStorage.getItem('subscribedEmail');
+                        if (saved && email) email.value = saved;
+                } catch { }
+        </script>
+</body>
+
+</html>

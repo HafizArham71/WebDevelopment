@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="modern-resuable-code.css">
+    <title>StopWatch | Arham</title>
+    <style>
+        html{
+            font-size: 62.5%;
+        }
+        .container{
+            width: clamp(33rem , 50% , 45rem);
+            box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.3),inset 0 0 2rem 0 rgba(255, 255, 255, 0.3)
+        }
+        span{
+            font-size: 50px;
+        }
+        button{
+            padding: 1.2rem 3rem;
+            border:2px solid #2f2f2f;
+            position: relative;
+            &::before{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 100%;
+                background-color: #2f2f2f88;
+                transition: all .2s ease;
+                z-index: -1;
+            }
+            &:hover::before{
+                width:  100%;
+            }
+        }
+        .stopwatchScreen{
+            transition: all .3s linear;
+            animation: changeColor 6s linear infinite alternate-reverse;
+        }
+        @keyframes changeColor {
+            0%{
+                box-shadow: 0 0 1rem 1px rgb(255, 255, 255);
+            }
+            20%{
+                box-shadow: 0 0 1rem 1px rgb(26, 219, 216);
+            }
+            40%{
+                box-shadow: 0 0 1rem 1px rgb(246, 95, 198);
+            }
+            60%{
+                box-shadow: 0 0 1rem 1px rgb(253, 89, 89);
+            }
+            80%{
+                box-shadow: 0 0 1rem 1px rgb(241, 146, 38);
+            }
+            100%{
+                box-shadow: 0 0 1rem 1px rgb(238, 98, 5);
+            }
+        }
+        @media (width < 500px) {
+            .stopwatchScreen{
+                width: 25rem;
+                span{
+                    font-size: 35px;
+                }
+            }
+            .buttons button{
+                font-size: 1.6rem;
+                padding: 1rem 2rem;
+            }
+        }
+        @media (width < 750px) {
+            .buttons button{
+                font-size: 1.7rem;
+                padding: 1rem 2rem;
+            }
+        }
+
+    </style>
+</head>
+
+<body class="wdth-100per hght-100vh backg-color-black-opacity-7 disp-flex algn-itm-cnter jstfy-cntnt-cnter font-fam-p">
+    <div id="loader"></div>
+    <div class="container disp-flex algn-itm-cnter jstfy-cntnt-cnter flex-dir-colmn gap5rem paddng-3rem border-rad-2rem hght-50rem margn-1rem">
+        <div class="stopwatchScreen wdth-30rem aspct-ratio-1 border-rad-50per  disp-flex algn-itm-cnter jstfy-cntnt-cnter gap1rem box-shdow-lg">
+            <span class="hour color-white">00</span>
+            <span class="font-size-40 color-white">:</span>
+            <span class="min color-white">00</span>
+            <span class="font-size-40 color-white">:</span>
+            <span class="sec color-white">00</span>
+        </div>
+        <div class="buttons wdth-100per margin-0-auto disp-flex jstfy-cntnt-cnter gap1rem">
+            <button type="button" class="start border-rad-1rem backg-color-transp- color-white font-size-19 crsr-pointer leter-spac-1px">Start</button>
+            <button type="button" class="stop border-rad-1rem backg-color-transp- color-white font-size-19 crsr-pointer leter-spac-1px">Stop</button>
+            <button type="button" class="reset border-rad-1rem backg-color-transp- color-white font-size-19 crsr-pointer leter-spac-1px">Reset</button>
+        </div>
+    </div>
+    <script src="resuable.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

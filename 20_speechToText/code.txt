@@ -1,0 +1,15 @@
+        let resultantText = document.querySelector('.resultantText');
+        let start = document.querySelector('.start');
+        let stop = document.querySelector('.stop');
+
+        let recognition = new webkitSpeechRecognition();
+        recognition.lang = window.navigator.language;
+        recognition.interimResults = true;
+
+        start.addEventListener('click' , recognition.start());
+        stop.addEventListener('click' , recognition.stop());
+
+        recognition.addEventListener('result' , (e)=>{
+            const result = event.results[e.results.length - 1][0].transcript;
+            resultantText.textContent = result;
+        })

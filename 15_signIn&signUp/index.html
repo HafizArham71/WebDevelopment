@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="modern-resuable-code.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Project</title>
+</head>
+
+<body>
+    <div id="loader"></div>
+    <div class="container">
+        <h1 id="heading">Sign Up</h1>
+        <span class="bar"></span>
+        <div class="input">
+            <div class="input-group" id="inputParentBox">
+                <input type="text" name="Username:" id="name">
+                <label for="">Name</label>
+                <ion-icon name="person-outline"></ion-icon>
+            </div>
+            <div class="input-group">
+                <input type="email" name="Email:">
+                <label for="">Email Id</label>
+                <ion-icon name="mail-outline"></ion-icon>
+            </div>
+            <div class="input-group">
+                <input type="password" name="Password:" id="password" value="">
+                <label for="">Password:</label>
+                <!-- <ion-icon name="lock-closed-outline" id="lock"></ion-icon> -->
+                <ion-icon name="eye-off-outline" id="eyeOff"></ion-icon>
+                <ion-icon name="eye-outline" id="eyeOn"></ion-icon>
+            </div>
+        </div>
+        <div class="buttons">
+            <button type="button" id="signUpBtn" class="disabled">Sign Up</button>
+            <button type="button" id="signInBtn">Sign In</button>
+        </div>
+    </div>
+    <script src="resuable.js"></script>
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

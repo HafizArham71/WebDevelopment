@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Featured Projects</title>
+  <link rel="stylesheet" href="css/loader.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/projects.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- SVG sprite (kept for tabs icons) -->
+  <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+    <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="3" y="3" width="7" height="7" rx="1" />
+      <rect x="14" y="3" width="7" height="7" rx="1" />
+      <rect x="3" y="14" width="7" height="7" rx="1" />
+      <rect x="14" y="14" width="7" height="7" rx="1" />
+    </symbol>
+    <symbol id="i-smartphone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="7" y="2" width="10" height="20" rx="2" />
+      <path d="M11 18h2" />
+    </symbol>
+    <symbol id="i-ux" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="8" cy="8" r="3" />
+      <path d="M5 16h6l-3 5zM14 6l6 6-6 6" />
+    </symbol>
+    <symbol id="i-play" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M8 5v14l11-7-11-7z" />
+    </symbol>
+  </svg>
+
+  <!-- Loader -->
+  <div class="preloader" id="preLoader" aria-label="Loading">
+    <div class="preloader__minimal">
+      <span class="loader-circle"></span>
+      <span class="loader-icons">
+        <!-- Palette -->
+        <svg class="loader-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path
+            d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z" />
+          <circle cx="13.5" cy="6.5" r=".5" fill="currentColor" />
+          <circle cx="17.5" cy="10.5" r=".5" fill="currentColor" />
+          <circle cx="6.5" cy="12.5" r=".5" fill="currentColor" />
+          <circle cx="8.5" cy="7.5" r=".5" fill="currentColor" />
+        </svg>
+        <!-- Bulb -->
+        <svg class="loader-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" style="display:none">
+          <path
+            d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" />
+          <path d="M9 18h6" />
+          <path d="M10 22h4" />
+        </svg>
+        <!-- Code -->
+        <svg class="loader-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" style="display:none">
+          <path d="m18 16 4-4-4-4" />
+          <path d="m6 8-4 4 4 4" />
+          <path d="m14.5 4-5 16" />
+        </svg>
+      </span>
+    </div>
+  </div>
+
+  <!-- ------------------  Navbar  ------------------ -->
+  <nav class="navbar">
+    <div class="navbar__box container">
+      <a href="#" class="brand">H. Arham</a>
+      <div class="navlinks nav" id="navLinks">
+        <ul>
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#profile" class="nav-link">Profile</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+        </ul>
+        <div class="link-indicator"></div>
+      </div>
+      <a href="#contact" class="hire-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-user-icon lucide-user">
+          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </svg>Hire me
+      </a>
+      <!-- Hamburger button for mobile -->
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="4" y1="6" x2="20" y2="6" />
+          <line x1="4" y1="12" x2="20" y2="12" />
+          <line x1="4" y1="18" x2="20" y2="18" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Projects Section -->
+  <section class="projects" id="projects" aria-labelledby="feat-title">
+    <div class="container">
+
+      <header class="heading">
+        <h2 id="feat-title">Featured Projects</h2>
+        <p>Showcasing innovative solutions across web development, mobile applications, and UI/UX design with
+          cutting-edge
+          technologies and user-centered approaches.</p>
+      </header>
+
+      <!-- Tabs -->
+      <div class="tabs" role="tablist" aria-label="Project categories">
+        <button class="tab" role="tab" aria-selected="true" data-filter="all">All Projects</button>
+        <button class="tab" role="tab" aria-selected="false" data-filter="web">
+          <svg width="16" height="16" aria-hidden="true">
+            <use href="#i-grid"></use>
+          </svg> Web Development
+        </button>
+        <button class="tab" role="tab" aria-selected="false" data-filter="mobile">
+          <svg width="16" height="16" aria-hidden="true">
+            <use href="#i-smartphone"></use>
+          </svg> Mobile Apps
+        </button>
+        <button class="tab" role="tab" aria-selected="false" data-filter="ux">
+          <svg width="16" height="16" aria-hidden="true">
+            <use href="#i-ux"></use>
+          </svg> UI/UX Design
+        </button>
+      </div>
+
+      <!-- Web Cards injected here -->
+      <section class="web-cards projects">
+        <div class="container">
+          <div class="webDevProjects" id="webDevProjects" aria-live="polite">
+            <div class="loading">Loading projects…</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom CTA -->
+      <div class="cta-strip reveal">
+        <div class="cta-box">
+          <span class="availability">
+            <span class="ping" aria-hidden="true"></span>
+            Available for new projects
+          </span>
+          <a href="#contact" class="btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-message-square-icon lucide-message-square">
+              <path
+                d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" />
+            </svg>
+            Let’s Talk
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer-polished">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-about">
+          <h2>Let's Create Something Amazing</h2>
+          <p>Ready to bring your vision to life? I'm here to help you build exceptional digital experiences that make a
+            lasting impact.</p>
+          <a href="#contact" class="btn-primary">
+            <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+            </svg>
+            Contact Us
+          </a>
+        </div>
+
+        <div class="footer-links-wrapper">
+          <div class="footer-links">
+            <h3>Navigation</h3>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Portfolio</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="#">Web Design</a></li>
+              <li><a href="#">Development</a></li>
+              <li><a href="#">Branding</a></li>
+              <li><a href="#">Consulting</a></li>
+              <li><a href="#">Support</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h3>Resources</h3>
+            <ul>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Case Studies</a></li>
+              <li><a href="#">Testimonials</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-subscribe">
+          <h3>Stay Updated</h3>
+          <p>Get the latest insights, tips, and project updates delivered to your inbox.</p>
+          <form class="subscribe-form" id="subscribeForm" novalidate>
+            <input type="email" id="emailInput" class="subscribe-input" placeholder="Enter your email"
+              autocomplete="email" required>
+            <button type="submit" class="btn-primary btn-subscribe" id="subscribeBtn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom-wrapper">
+        <div class="footer-bottom">
+          <div class="footer-author">
+            <div class="author-avatar">A</div>
+            <div class="author-info">
+              <strong>Hafiz Arham</strong>
+              <span>Creative Developer & Designer</span>
+            </div>
+          </div>
+          <div class="footer-social">
+            <span>Follow me:</span>
+            <div class="social-icons">
+              <a href="#" aria-label="Behance">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <path
+                    d="M4.654 3c.461 0 .887.035 1.278.14.39.07.711.216.996.391s.497.426.641.747c.14.32.216.711.216 1.137 0 .496-.106.922-.356 1.242-.215.32-.566.606-.997.817.606.176 1.067.496 1.348.922s.461.957.461 1.563c0 .496-.105.922-.285 1.278a2.3 2.3 0 0 1-.782.887c-.32.215-.711.39-1.137.496a5.3 5.3 0 0 1-1.278.176L0 12.803V3zm-.285 3.978c.39 0 .71-.105.957-.285.246-.18.355-.497.355-.887 0-.216-.035-.426-.105-.567a1 1 0 0 0-.32-.355 1.8 1.8 0 0 0-.461-.176c-.176-.035-.356-.035-.567-.035H2.17v2.31c0-.005 2.2-.005 2.2-.005zm.105 4.193c.215 0 .426-.035.606-.07.176-.035.356-.106.496-.216s.25-.215.356-.39c.07-.176.14-.391.14-.641 0-.496-.14-.852-.426-1.102-.285-.215-.676-.32-1.137-.32H2.17v2.734h2.305zm6.858-.035q.428.427 1.278.426c.39 0 .746-.106 1.032-.286q.426-.32.53-.64h1.74c-.286.851-.712 1.457-1.278 1.848-.566.355-1.243.566-2.06.566a4.1 4.1 0 0 1-1.527-.285 2.8 2.8 0 0 1-1.137-.782 2.85 2.85 0 0 1-.712-1.172c-.175-.461-.25-.957-.25-1.528 0-.531.07-1.032.25-1.493.18-.46.426-.852.747-1.207.32-.32.711-.606 1.137-.782a4 4 0 0 1 1.493-.285c.606 0 1.137.105 1.598.355.46.25.817.532 1.102.958.285.39.496.851.641 1.348.07.496.105.996.07 1.563h-5.15c0 .58.21 1.11.496 1.396m2.24-3.732c-.25-.25-.642-.391-1.103-.391-.32 0-.566.07-.781.176s-.356.25-.496.39a.96.96 0 0 0-.25.497c-.036.175-.07.32-.07.46h3.196c-.07-.526-.25-.882-.497-1.132zm-3.127-3.728h3.978v.957h-3.978z" />
+                </svg>
+              </a>
+              <a href="#" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                  </path>
+                </svg>
+              </a>
+              <a href="#" aria-label="Dribbble">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path
+                    d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 4.66-16.88 5.03m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32">
+                  </path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <p class="footer-copyright">© 2025 Your Name. All rights reserved.</p>
+          <p class="footer-made-with">Made with Passion</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/loader.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+
+</html>

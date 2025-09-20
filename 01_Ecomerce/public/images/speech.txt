@@ -1,0 +1,29 @@
+let textarea = document.querySelector('textarea');
+let button = document.querySelector('button');
+
+//? Function to start speech recognition
+
+let convert = () => {
+    if (!('webkitSpeechRecognition' in window)) {
+        alert('Speech Recognition API not supported in this browser.');
+        return;
+    }
+
+    let recognition = new webkitSpeechRecognition();
+    recognition.interimResults = true;
+
+    recognition.addEventListener('result', (e) => {
+        let transcript = Array.from(e.results)
+            .map(result => result[0])
+            .map(result => result.transcript)
+            .join('');
+
+        textarea.value = transcript;
+    });
+
+    recognition.start();
+};
+
+//? Event listener for the button
+
+button.addEventListener('click', convert);
